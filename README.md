@@ -3,7 +3,7 @@
 basically i got tired of not knowing when an AI is making stuff up so i built a tool that looks *inside* the model while it's generating and figures out which tokens it's uncertain about
 
 not vibes-based. actual math. reads the residual stream at every layer.
-
+AI was used in debugging
 ---
 
 ## what it does
