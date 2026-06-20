@@ -10,7 +10,7 @@ not vibes-based. actual math. reads the residual stream at every layer.
 
 you give it a prompt, it runs the model, and instead of just showing you the output it shows you a heatmap of which words the model was confident about vs which ones it was basically guessing
 
-like if you ask "the capital of Australia is" and the model says "a city of contrasts" — veritas will flag "city" at 0.85 risk before you even have to google it
+like if you ask "the capital of Australia is" and the model says "a city of contrasts"  veritas will flag "city" at 0.85 risk before you even have to google it
 
 it also plots how each token's probability evolves across the 24 layers of the network (the "logit lens trajectory") which is actually really cool to look at
 
@@ -20,11 +20,11 @@ it also plots how each token's probability evolves across the 24 layers of the n
 
 three things get measured per token:
 
-**signal 1** — how confident was the final layer? (entropy, max prob, margin between top-2)
+**signal 1**  how confident was the final layer? (entropy, max prob, margin between top-2)
 
-**signal 2** — how many of the last 8 layers agreed on this token? if the layers are arguing with each other that's a bad sign
+**signal 2**  how many of the last 8 layers agreed on this token? if the layers are arguing with each other that's a bad sign
 
-**signal 3** — at which layer did the model first commit to this token? late crystallization = usually hallucinating. also tracks how many times the top prediction flipped across layers
+**signal 3**  at which layer did the model first commit to this token? late crystallization = usually hallucinating. also tracks how many times the top prediction flipped across layers
 
 these get combined into a risk score per token, then grouped into words/spans
 
@@ -91,7 +91,7 @@ veritas compare run1.json run2.json
 veritas demo
 ```
 
-**FCL connection** (this is for the research side — connects to frequency-depth scaling):
+**FCL connection** (this is for the research side  connects to frequency-depth scaling):
 ```bash
 veritas audit --prompt "..." --fcl
 ```
@@ -100,7 +100,7 @@ veritas audit --prompt "..." --fcl
 
 ## how it works (slightly more detail)
 
-the core idea is the "logit lens" — at each layer of the transformer you can project the residual stream through the unembedding matrix to get a pseudo-probability distribution over vocab. this lets you watch how the model's "opinion" on the next token changes as it processes through layers.
+the core idea is the "logit lens"  at each layer of the transformer you can project the residual stream through the unembedding matrix to get a pseudo-probability distribution over vocab. this lets you watch how the model's "opinion" on the next token changes as it processes through layers.
 
 hallucinated tokens tend to:
 - crystallize late (model doesn't commit until the very last layers)
