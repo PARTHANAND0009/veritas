@@ -1,0 +1,17 @@
+pyproject.toml
+tests/test_model.py
+tests/test_score.py
+tests/test_signals.py
+veritas/__init__.py
+veritas/cli.py
+veritas/data.py
+veritas/model.py
+veritas/score.py
+veritas/signals.py
+veritas/viz.py
+veritas.egg-info/PKG-INFO
+veritas.egg-info/SOURCES.txt
+veritas.egg-info/dependency_links.txt
+veritas.egg-info/entry_points.txt
+veritas.egg-info/requires.txt
+veritas.egg-info/top_level.txt

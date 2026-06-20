@@ -1,0 +1,5 @@
+{"prompt": "Q: What is the capital of France?\nA:", "answer": "Paris", "label": 0}
+{"prompt": "Q: Who wrote Hamlet?\nA:", "answer": "William Shakespeare", "label": 0}
+{"prompt": "Q: What is the speed of light in miles per second?\nA:", "answer": "186000", "label": 1}
+{"prompt": "Q: What year did the Berlin Wall fall?\nA:", "answer": "1989", "label": 1}
+{"prompt": "Q: What is the chemical symbol for gold?\nA:", "answer": "Au", "label": 1}

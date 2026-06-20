@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veritas-audit"
+version = "0.1.0"
+description = "White-box hallucination auditor for open-weight LLMs"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Parth Anand", email = "projectsadak.india@gmail.com" }]
+keywords = ["llm", "hallucination", "interpretability", "mechanistic", "transformers"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "transformer_lens>=2.0.0",
+    "transformers>=4.40.0",
+    "torch>=2.1.0",
+    "datasets>=2.18.0",
+    "scikit-learn>=1.4.0",
+    "matplotlib>=3.8.0",
+    "click>=8.1.0",
+    "rich>=13.7.0",
+    "numpy>=1.26.0",
+    "gradio>=4.0.0",
+    "pandas>=2.0.0",
+    "psutil>=5.9.0",
+    "pydantic>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/parthanand/Veritas"
+Repository = "https://github.com/parthanand/Veritas"
+
+[project.optional-dependencies]
+semantic = ["sentence-transformers>=2.0.0"]
+
+[project.scripts]
+veritas = "veritas.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["veritas*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+markers = ["slow: requires model download and GPU/CPU inference"]
+testpaths = ["tests"]
