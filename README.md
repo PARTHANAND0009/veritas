@@ -10,7 +10,7 @@ not vibes-based. actual math. reads the residual stream at every layer.
 
 you give it a prompt, it runs the model, and instead of just showing you the output it shows you a heatmap of which words the model was confident about vs which ones it was basically guessing
 
-like if you ask "the capital of Australia is" and the model says "a city of contrasts"  veritas will flag "city" at 0.85 risk before you even have to google it
+like if you ask "the capital of Australia is" and the model says "a city of contrasts" veritas will flag "city" at 0.85 risk before you even have to google it
 
 it also plots how each token's probability evolves across the 24 layers of the network (the "logit lens trajectory") which is actually really cool to look at
 
